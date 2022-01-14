@@ -1,0 +1,70 @@
+= Quarkus 🤝 Kafka
+Jonas Birklbauer, Nico Bojer
+1.0.0, 2022-01-01
+ifndef::sourcedir[:sourcedir: ../src/main/java]
+ifndef::imagesdir[:imagesdir: images]
+ifndef::backend[:backend: html5]
+:icons: font
+
+== Problem
+
+* Datenerfassung von der LinkedIn-Webseite und -Infrastruktur
+* Keine Möglichkeit große Mengen von Daten mit niedriger Latenz in Echtzeit zu verarbeiten
+
+== Event Streaming vs Message Queueing
+
+[cols="1,1"]
+|===
+| *Event streaming*
+| *Message Queueing*
+
+| Dauerhaftes Speichern
+| Gelöscht sobald gelesen
+
+| Mehrere Consumer auf eine Partition
+| Einzelner Consumer auf Queue
+|===
+
+== Architektur
+
+image::Kafka-Architecture.png[Architektur]
+
+=== Architektur
+
+image::broker-architecture.png[Broker-Architektur]
+
+== Alternativen zu Kafka
+
+* RabbitMQ
+* Google pub/sub
+* Amazon SQS
+
+== Kafka vs RabbitMQ
+
+[cols="1,1"]
+|===
+| *Kafka*
+| *RabbitMQ*
+
+| Event Streaming Platform
+| Message Queueing
+
+| Payload eher klein (max. 1 MB)
+| Payload eher groß (keine Begrenzung)
+|===
+
+=== Kafka vs RabbitMQ
+
+[cols="1,1"]
+|===
+
+| Bis zu 1. Millionen Nachrichten pro Sekunde
+| 4k - 10k Nachrichten pro Sekunde
+
+| Dumb broker / Smart Consumer
+| Smart broker / Dumb Consumer
+
+|===
+
+
+
